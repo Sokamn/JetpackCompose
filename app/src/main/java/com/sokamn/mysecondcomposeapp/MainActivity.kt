@@ -14,6 +14,7 @@ import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import com.sokamn.mysecondcomposeapp.challenges.layout.MyExerciseConstraint
 import com.sokamn.mysecondcomposeapp.components.MyButtons
+import com.sokamn.mysecondcomposeapp.components.MyImage
 import com.sokamn.mysecondcomposeapp.components.MyTextField
 import com.sokamn.mysecondcomposeapp.components.MyTextFieldParent
 import com.sokamn.mysecondcomposeapp.components.MyTexts
@@ -30,7 +31,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MySecondComposeAppTheme {
                 Scaffold( modifier = Modifier.fillMaxSize() ) { innerPadding ->
-                    MyButtons(Modifier.padding(innerPadding))
+                    MyImage(Modifier.padding(innerPadding))
                 }
             }
         }
