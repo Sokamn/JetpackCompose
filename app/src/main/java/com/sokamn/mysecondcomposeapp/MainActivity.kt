@@ -13,8 +13,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import com.sokamn.mysecondcomposeapp.challenges.layout.MyExerciseConstraint
+import com.sokamn.mysecondcomposeapp.components.MyAdvancedImage
+import com.sokamn.mysecondcomposeapp.components.MyAdvancedProgress
 import com.sokamn.mysecondcomposeapp.components.MyButtons
+import com.sokamn.mysecondcomposeapp.components.MyIcon
 import com.sokamn.mysecondcomposeapp.components.MyImage
+import com.sokamn.mysecondcomposeapp.components.MyLottieProgress
+import com.sokamn.mysecondcomposeapp.components.MyNetworkImage
+import com.sokamn.mysecondcomposeapp.components.MyProgress
 import com.sokamn.mysecondcomposeapp.components.MyTextField
 import com.sokamn.mysecondcomposeapp.components.MyTextFieldParent
 import com.sokamn.mysecondcomposeapp.components.MyTexts
@@ -31,7 +37,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MySecondComposeAppTheme {
                 Scaffold( modifier = Modifier.fillMaxSize() ) { innerPadding ->
-                    MyImage(Modifier.padding(innerPadding))
+                    MyLottieProgress(Modifier.padding(innerPadding))
                 }
             }
         }

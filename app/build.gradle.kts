@@ -54,6 +54,13 @@ dependencies {
     // CONSTRAINT LAYOUT COMPOSE
     implementation(libs.constraint.layout)
 
+    // COIL - AGREGAR IMAGENES DESDE URL
+    implementation(libs.coil.compose)
+    implementation(libs.coil.network.okhttp)
+
+    // LOTTIE FILES
+    implementation(libs.lottie.compose)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
