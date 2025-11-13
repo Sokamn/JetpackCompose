@@ -16,14 +16,20 @@ import com.sokamn.mysecondcomposeapp.challenges.layout.MyExerciseConstraint
 import com.sokamn.mysecondcomposeapp.components.MyAdvancedImage
 import com.sokamn.mysecondcomposeapp.components.MyAdvancedProgress
 import com.sokamn.mysecondcomposeapp.components.MyButtons
+import com.sokamn.mysecondcomposeapp.components.MyCheckBox
 import com.sokamn.mysecondcomposeapp.components.MyIcon
 import com.sokamn.mysecondcomposeapp.components.MyImage
 import com.sokamn.mysecondcomposeapp.components.MyLottieProgress
 import com.sokamn.mysecondcomposeapp.components.MyNetworkImage
 import com.sokamn.mysecondcomposeapp.components.MyProgress
+import com.sokamn.mysecondcomposeapp.components.MyRadioButton
+import com.sokamn.mysecondcomposeapp.components.MyRadioButtonList
+import com.sokamn.mysecondcomposeapp.components.MySwitch
 import com.sokamn.mysecondcomposeapp.components.MyTextField
 import com.sokamn.mysecondcomposeapp.components.MyTextFieldParent
 import com.sokamn.mysecondcomposeapp.components.MyTexts
+import com.sokamn.mysecondcomposeapp.components.MyTriStateCheckBox
+import com.sokamn.mysecondcomposeapp.components.ParentCheckBoxes
 import com.sokamn.mysecondcomposeapp.components.layout.ConstraintBarrier
 import com.sokamn.mysecondcomposeapp.components.layout.ConstraintChain
 import com.sokamn.mysecondcomposeapp.components.layout.MyAdvancedConstraintLayout
@@ -37,7 +43,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MySecondComposeAppTheme {
                 Scaffold( modifier = Modifier.fillMaxSize() ) { innerPadding ->
-                    MyLottieProgress(Modifier.padding(innerPadding))
+                    MyRadioButtonList(Modifier.padding(innerPadding))
                 }
             }
         }
