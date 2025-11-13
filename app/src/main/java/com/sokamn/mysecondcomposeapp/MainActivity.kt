@@ -4,11 +4,13 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
@@ -17,6 +19,9 @@ import com.sokamn.mysecondcomposeapp.components.MyAdvancedImage
 import com.sokamn.mysecondcomposeapp.components.MyAdvancedProgress
 import com.sokamn.mysecondcomposeapp.components.MyButtons
 import com.sokamn.mysecondcomposeapp.components.MyCheckBox
+import com.sokamn.mysecondcomposeapp.components.MyDropDownItem
+import com.sokamn.mysecondcomposeapp.components.MyDropDownMenu
+import com.sokamn.mysecondcomposeapp.components.MyExposedDropDownMenu
 import com.sokamn.mysecondcomposeapp.components.MyIcon
 import com.sokamn.mysecondcomposeapp.components.MyImage
 import com.sokamn.mysecondcomposeapp.components.MyLottieProgress
@@ -24,6 +29,9 @@ import com.sokamn.mysecondcomposeapp.components.MyNetworkImage
 import com.sokamn.mysecondcomposeapp.components.MyProgress
 import com.sokamn.mysecondcomposeapp.components.MyRadioButton
 import com.sokamn.mysecondcomposeapp.components.MyRadioButtonList
+import com.sokamn.mysecondcomposeapp.components.MyRangeSlider
+import com.sokamn.mysecondcomposeapp.components.MySlider
+import com.sokamn.mysecondcomposeapp.components.MySliderAdvanced
 import com.sokamn.mysecondcomposeapp.components.MySwitch
 import com.sokamn.mysecondcomposeapp.components.MyTextField
 import com.sokamn.mysecondcomposeapp.components.MyTextFieldParent
@@ -42,8 +50,13 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MySecondComposeAppTheme {
-                Scaffold( modifier = Modifier.fillMaxSize() ) { innerPadding ->
-                    MyRadioButtonList(Modifier.padding(innerPadding))
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    Box(
+                        modifier = Modifier.fillMaxSize().padding(innerPadding),
+                        contentAlignment = Alignment.Center
+                    ){
+                        Text("Esta es mi Screen")
+                    }
                 }
             }
         }
