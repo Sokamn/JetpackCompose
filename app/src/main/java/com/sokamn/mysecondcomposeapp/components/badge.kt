@@ -12,7 +12,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
-fun MyBadge(modifier: Modifier = Modifier) {
+fun MyBadge() {
     Badge(
         containerColor = Color.Red,
         contentColor = Color.White
@@ -23,8 +23,8 @@ fun MyBadge(modifier: Modifier = Modifier) {
 
 @Preview
 @Composable
-fun MyBadgeBox(modifier: Modifier = Modifier) {
-    BadgedBox(modifier = modifier, badge = { MyBadge() } ) {
+fun MyBadgeBox() {
+    BadgedBox(modifier = Modifier, badge = { MyBadge() } ) {
         Icon(imageVector = Icons.Default.ShoppingCart, contentDescription = "Carrito")
     }
 }

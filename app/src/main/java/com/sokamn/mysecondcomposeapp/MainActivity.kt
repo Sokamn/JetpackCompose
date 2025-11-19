@@ -19,8 +19,11 @@ import androidx.compose.material3.SnackbarResult
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -28,7 +31,12 @@ import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import com.sokamn.mysecondcomposeapp.components.MyFAB
 import com.sokamn.mysecondcomposeapp.components.MyBadgeBox
+import com.sokamn.mysecondcomposeapp.components.MyCustomDialog
+import com.sokamn.mysecondcomposeapp.components.MyDateDialog
+import com.sokamn.mysecondcomposeapp.components.MyDialog
 import com.sokamn.mysecondcomposeapp.components.MyDivider
+import com.sokamn.mysecondcomposeapp.components.MyTimePicker
+import com.sokamn.mysecondcomposeapp.components.model.PokemonCombat
 import com.sokamn.mysecondcomposeapp.components.scaffold.MyModalDrawer
 import com.sokamn.mysecondcomposeapp.components.scaffold.MyNavigationBar
 import com.sokamn.mysecondcomposeapp.components.scaffold.MyTopAppBar
@@ -45,13 +53,29 @@ class MainActivity : ComponentActivity() {
                 val scope = rememberCoroutineScope()
                 val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
 
+                val pokemonCombat = PokemonCombat("Totodile", "Charmander")
+                var showDialog by remember { mutableStateOf(false) }
+
+                MyCustomDialog(pokemonCombat = pokemonCombat,
+                    showDialog = showDialog,
+                    onStartCombat = {
+                        scope.launch {
+                            snackbarHostState.showSnackbar(
+                                message = "Inició el combate",
+                                actionLabel = "Cancelar combate"
+                            )
+                        }
+                        showDialog = false
+                    }
+                ){ showDialog = false }
+
                 MyModalDrawer(drawerState, onCloseNav = { scope.launch { drawerState.close() } }) {
 
                     Scaffold(
                         modifier = Modifier.fillMaxSize(),
                         topBar = { MyTopAppBar{ scope.launch { drawerState.open() } } },
                         snackbarHost = { SnackbarHost(hostState = snackbarHostState) },
-                        floatingActionButton = { MyFAB() },
+                        floatingActionButton = { MyFAB{ showDialog = true } },
                         floatingActionButtonPosition = FabPosition.Center,
                         bottomBar = { MyNavigationBar() }
                     ) { innerPadding ->
@@ -76,7 +100,7 @@ class MainActivity : ComponentActivity() {
                                 }
                             })
 
-                            MyDivider()
+
 
                         }
 
