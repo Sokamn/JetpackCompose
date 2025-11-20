@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.jetbrainsKotlinSerialization)
 }
 
 android {
@@ -60,6 +61,10 @@ dependencies {
 
     // LOTTIE FILES
     implementation(libs.lottie.compose)
+
+    // NAVIGATION
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.kotlin.serialization.json)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

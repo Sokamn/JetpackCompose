@@ -39,11 +39,14 @@ import com.sokamn.mysecondcomposeapp.components.MyCustomDialog
 import com.sokamn.mysecondcomposeapp.components.MyDateDialog
 import com.sokamn.mysecondcomposeapp.components.MyDialog
 import com.sokamn.mysecondcomposeapp.components.MyDivider
+import com.sokamn.mysecondcomposeapp.components.MyGridList
 import com.sokamn.mysecondcomposeapp.components.MyTimePicker
+import com.sokamn.mysecondcomposeapp.components.ScrollList
 import com.sokamn.mysecondcomposeapp.components.advanced.MyDerivedStateOf
 import com.sokamn.mysecondcomposeapp.components.advanced.MyInteractionSource
 import com.sokamn.mysecondcomposeapp.components.advanced.MyLaunchEffect
 import com.sokamn.mysecondcomposeapp.components.model.PokemonCombat
+import com.sokamn.mysecondcomposeapp.components.navigation.NavigationWrapper
 import com.sokamn.mysecondcomposeapp.components.scaffold.MyModalDrawer
 import com.sokamn.mysecondcomposeapp.components.scaffold.MyNavigationBar
 import com.sokamn.mysecondcomposeapp.components.scaffold.MyTopAppBar
@@ -77,7 +80,9 @@ class MainActivity : ComponentActivity() {
                     }
                 ) { showDialog = false }
 
-                MyModalDrawer(drawerState, onCloseNav = { scope.launch { drawerState.close() } }) {
+                NavigationWrapper()
+
+                /*MyModalDrawer(drawerState, onCloseNav = { scope.launch { drawerState.close() } }) {
 
                     Scaffold(
                         modifier = Modifier.fillMaxSize(),
@@ -94,7 +99,7 @@ class MainActivity : ComponentActivity() {
                                 .background(Color.LightGray),
                             horizontalAlignment = Alignment.CenterHorizontally,
                             verticalArrangement = Arrangement.SpaceAround
-                        ) {
+                        ) {*/
 
                             /*Text("Esta es mi Screen", modifier = Modifier.clickable{
                                 scope.launch {
@@ -125,11 +130,11 @@ class MainActivity : ComponentActivity() {
                                 }
                             }*/
 
-                            MyAdvancedList()
-                        }
+                            //MyGridList()
+                        //}
 
-                    }
-                }
+                    //}
+                //}
             }
         }
     }
