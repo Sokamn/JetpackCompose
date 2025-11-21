@@ -11,14 +11,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.sp
+import com.sokamn.mysecondcomposeapp.components.navigation.examples.model.SettingModel
 
 @Composable
-fun DetailScreen(id: String, test: Boolean,navigateBack: () -> Unit) {
+fun DetailScreen(id: String, test: Boolean, navigateToSettings: (SettingModel) -> Unit) {
+    val settings = SettingModel(id = "SokiOptions", darkMode = false)
     Column(Modifier.fillMaxSize().background(Color.Yellow), horizontalAlignment = Alignment.CenterHorizontally) {
         Spacer(Modifier.weight(1f))
         Text(text = "DETAIL: $id", fontSize = 30.sp)
         Spacer(Modifier.weight(1f))
-        Button(onClick = { navigateBack() }) {
+        Button(onClick = { navigateToSettings(settings) }) {
             Text("Navegar")
         }
         Spacer(Modifier.weight(1f))
